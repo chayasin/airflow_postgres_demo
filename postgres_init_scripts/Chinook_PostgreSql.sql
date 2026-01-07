@@ -13,25 +13,18 @@
            will be lost when this file is regenerated.
 ********************************************************************************/
 
-/*******************************************************************************
-   Drop database if it exists
-********************************************************************************/
--- DROP DATABASE IF EXISTS postgres;
-
-
-/*******************************************************************************
-   Create database
-********************************************************************************/
--- CREATE DATABASE IF NOT EXISTS postgres;
-
-
 \c postgres;
 
 /***
 drop tables first to avoid conflicts
 ***/
 DROP SCHEMA IF EXISTS mart CASCADE;
-CREATE SCHEMA mart;
+CREATE SCHEMA IF NOT EXISTS mart;
+
+DROP SCHEMA IF EXISTS warehouse CASCADE;
+CREATE SCHEMA IF NOT EXISTS warehouse;
+
+SET search_path TO warehouse;
 
 DROP TABLE IF EXISTS
     playlist_track,
