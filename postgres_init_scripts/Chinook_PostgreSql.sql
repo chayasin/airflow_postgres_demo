@@ -30,6 +30,8 @@
 /***
 drop tables first to avoid conflicts
 ***/
+DROP SCHEMA IF EXISTS mart CASCADE;
+CREATE SCHEMA mart;
 
 DROP TABLE IF EXISTS
     playlist_track,
