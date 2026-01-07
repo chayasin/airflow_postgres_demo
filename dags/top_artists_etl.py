@@ -25,7 +25,7 @@ default_args = {
     dag_id='top_artists_etl',
     default_args=default_args,
     description='ETL pipeline to find and load top 10 artists by revenue',
-    schedule=None,  # Manual trigger
+    schedule_interval=None,  # Manual trigger
     catchup=False,
     tags=['etl', 'artists', 'mart'],
 )
